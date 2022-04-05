@@ -30,9 +30,11 @@ class DummySpider(scrapy.Spider):
         example_div = response.xpath('//ul')
         nodes = example_div.xpath('.//child::node()')
         for x in nodes:
-            
+            print("new: \n")
+            print(x)
+            # self.dig_further(x)
+        for x in nodes:
             self.dig_further(x)
-
         
 
         print(self.overall_data)
